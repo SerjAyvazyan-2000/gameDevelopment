@@ -1,0 +1,152 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(15, 22, 40, 0.95);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    padding: 20px 0;
+    transition: background 0.3s ease;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    display: flex;
+    align-items: center;
+
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    height: 2px;
+    background: #E63946;
+    width: 0;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-contact a {
+    color: #ccc;
+    margin-left: 15px;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+    width: 30px;
+    height: 22px;
+    position: relative;
+    z-index: 1001;
+}
+
+.burger .bar,
+.burger .bar::before,
+.burger .bar::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.burger .bar {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.burger .bar::before {
+    top: -10px;
+}
+
+.burger .bar::after {
+    bottom: -10px;
+}
+
+/* Burger active state */
+.burger.active .bar {
+    background-color: transparent;
+}
+
+.burger.active .bar::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.burger.active .bar::after {
+    bottom: 0;
+    transform: rotate(-45deg);
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+    .burger {
+        display: block;
+    }
+
+    .nav {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        background: #0d1b2a;
+        width: 100%;
+        flex-direction: column;
+        gap: 20px;
+        padding: 30px 0;
+        transform: translateY(-200%);
+        transition: transform 0.4s ease;
+    }
+
+    .nav.open {
+        transform: translateY(0);
+    }
+
+    .nav-links {
+        flex-direction: column;
+    }
+
+    .nav-contact {
+        flex-direction: column;
+        gap: 10px;
+        display: flex;
+    }
+}
