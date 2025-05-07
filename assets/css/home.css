@@ -42,11 +42,14 @@
     font-size: 3rem;
     font-weight: 800;
     margin-bottom: 20px;
+    color: white;
+
 }
 
 .hero-subtitle {
     font-size: 1.2rem;
     margin-bottom: 25px;
+    color: white;
 }
 
 .hero-list {
@@ -57,6 +60,8 @@
 .hero-list li {
     margin-bottom: 10px;
     font-size: 1.05rem;
+    color: white;
+
 }
 
 .hero-btn {
@@ -788,6 +793,12 @@
     .pricing-card {
         text-align: center;
     }
+    .contact-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 15px;
+
+    }
 }
 
 .learning {
@@ -879,7 +890,7 @@
 .cookie-text {
     flex: 1;
     font-size: 1rem;
-    color: #918f8f;
+    color: white;
 }
 
 .cookie-btn {
